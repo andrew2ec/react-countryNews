@@ -6,10 +6,10 @@ var News = React.createClass({
 			<div>
 				<div>
 					{this.props.badge}
-					<h1>{this.props.title}</h1>
+					<h3>{this.props.title}</h3>
 				</div>
 				<div>
-					<h2>{this.props.subtitle}</h2>
+					<h4>{this.props.subtitle}</h4>
 				</div>
 				<div>
 					<p>{this.props.content}</p>

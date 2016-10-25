@@ -25475,6 +25475,7 @@ var BrowserHistory = ReactRouter.browserHistory;
 
 var Header = require('./components/Header.jsx');
 var News = require('./components/News.jsx');
+var Photos = require('./components/Photos.jsx');
 
 var Routes = React.createElement(
 	Router,
@@ -25482,18 +25483,28 @@ var Routes = React.createElement(
 	React.createElement(
 		Route,
 		{ path: '/', component: Header },
-		React.createElement(Route, { path: '/news', component: News })
+		React.createElement(Route, { path: '/news', component: News }),
+		React.createElement(Route, { path: '/photos', component: Photos })
 	)
 );
 module.exports = Routes;
 
-},{"./components/Header.jsx":229,"./components/News.jsx":230,"react":226,"react-router":28}],229:[function(require,module,exports){
+},{"./components/Header.jsx":229,"./components/News.jsx":230,"./components/Photos.jsx":231,"react":226,"react-router":28}],229:[function(require,module,exports){
 var React = require('react');
 
 var Header = React.createClass({
 	displayName: 'Header',
 
 	render: function () {
+
+		linkStyle = {
+			display: 'inline',
+			textAlign: 'right'
+		};
+		listStyle = {
+			listStyleType: 'none',
+			display: 'inline'
+		};
 		return React.createElement(
 			'div',
 			null,
@@ -25517,16 +25528,28 @@ var Header = React.createClass({
 			),
 			React.createElement(
 				'div',
-				null,
+				{ style: linkStyle },
 				React.createElement(
-					'h2',
-					null,
-					this.props.link1
-				),
-				React.createElement(
-					'h2',
-					null,
-					this.props.link2
+					'ul',
+					{ style: listStyle },
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'h2',
+							null,
+							this.props.link1
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'h2',
+							null,
+							this.props.link2
+						)
+					)
 				)
 			),
 			React.createElement(
@@ -25554,7 +25577,7 @@ var News = React.createClass({
 				null,
 				this.props.badge,
 				React.createElement(
-					'h1',
+					'h3',
 					null,
 					this.props.title
 				)
@@ -25563,7 +25586,7 @@ var News = React.createClass({
 				'div',
 				null,
 				React.createElement(
-					'h2',
+					'h4',
 					null,
 					this.props.subtitle
 				)
@@ -25599,11 +25622,60 @@ module.exports = News;
 
 },{"react":226}],231:[function(require,module,exports){
 var React = require('react');
+
+var Photos = React.createClass({
+	displayName: 'Photos',
+
+	render: function () {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'h1',
+				null,
+				'Photos'
+			),
+			React.createElement(
+				'ul',
+				null,
+				React.createElement(
+					'li',
+					null,
+					this.props.pic
+				),
+				React.createElement(
+					'li',
+					null,
+					this.props.pic1
+				),
+				React.createElement(
+					'li',
+					null,
+					this.props.pic2
+				),
+				React.createElement(
+					'li',
+					null,
+					this.props.pic3
+				)
+			)
+		);
+	}
+});
+module.exports = Photos;
+
+},{"react":226}],232:[function(require,module,exports){
+var React = require('react');
 var ReactDOM = require('react-dom');
 var Routes = require('./Routes.jsx');
 var Header = require('./components/Header.jsx');
+var News = require('./components/News.jsx');
 
 ReactDOM.render(Routes, document.getElementById('switch'));
-ReactDOM.render(React.createElement(Header, { title: 'Country News', subtitle: 'Top stories in my country' }), document.getElementById('switch'));
+ReactDOM.render(React.createElement(Header, { title: 'Country News', subtitle: 'Top stories in my country', link1: 'NEWS', link2: 'PHOTOS' }), document.getElementById('switch'));
 
-},{"./Routes.jsx":228,"./components/Header.jsx":229,"react":226,"react-dom":1}]},{},[231]);
+ReactDOM.render(React.createElement(News, { title: 'Trump\'s Accusers Are Mostly New Yorkers\n', subtitle: 'Alleged Incidents That Happened in New York City', content: ' Donald Trump speaks at the New York State Republican Gala at the Grand Hyatt on April 14, 2016.  \nDonald Trump speaks at the New York State Republican Gala at the Grand Hyatt on April 14, 2016.\nView Full CaptionDNAinfo/Ben Fractenberg\nIn a presidential contest between two New Yorkers, you might have expected a lot of dirt around electorally unpopular aspects of the city: the details of currying favor with Wall Street, billionaires making untaxed billions on Manhattan real estate, that sort of thing. The defining issue over the past month has, in fact, been the accusations from almost a dozen women that GOP nominee Donald Trump harassed, groped, or made unwanted advances to them. And that, too, is a New York story. Of the 12 women who have now alleged that Donald Trump groped, kissed without consent, or made unwanted advances toward them, all but three have solid connections to New York. (Another woman said she was groped by a stranger while protesting at Trump Tower this weekend.) The Trump campaign denies all the accusations.  "The events never happened," Trump told reporters Saturday. "Never. All of these liars will be sued after the election is over."', location: 'New York, NY' }), document.getElementById('article1'));
+
+ReactDOM.render(React.createElement(News, { title: 'Venezuela: Pres. Maduro Opponents Fan Flames of Birther Debate', content: 'A birther debate is heating up in Venezuela as President Nicolas Maduros opponents seek to push the embattled socialist leader from office at any cost. Like the birther controversy surrounding Barack Obama in the U.S., the lack of any evidence hasnt stopped his opponents from speculating. On Tuesday, the opposition-controlled congress began debating Maduros "constitutional situation" in which lawmakers vow to present evidence that hes a dual Colombian citizen and therefore constitutionally ineligible to hold Venezuelas highest office.\n', location: 'Venezuela, Caracas' }), document.getElementById('article2'));
+
+},{"./Routes.jsx":228,"./components/Header.jsx":229,"./components/News.jsx":230,"react":226,"react-dom":1}]},{},[232]);

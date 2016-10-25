@@ -9,6 +9,7 @@ var BrowserHistory = ReactRouter.browserHistory;
 
 var Header = require('./components/Header.jsx');
 var News = require('./components/News.jsx');
+var Photos = require('./components/Photos.jsx');
 
 var Routes = React.createElement(
    Router,
@@ -16,7 +17,8 @@ var Routes = React.createElement(
    React.createElement(
       Route,
       { path: '/', component: Header },
-      React.createElement(Route, { path: '/news', component: News })
+      React.createElement(Route, { path: '/news', component: News }),
+      React.createElement(Route, { path: '/photos', component: Photos })
    )
 );
 module.exports = Routes;

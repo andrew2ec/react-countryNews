@@ -14,7 +14,7 @@ var News = React.createClass({
             null,
             this.props.badge,
             React.createElement(
-               'h1',
+               'h3',
                null,
                this.props.title
             )
@@ -23,7 +23,7 @@ var News = React.createClass({
             'div',
             null,
             React.createElement(
-               'h2',
+               'h4',
                null,
                this.props.subtitle
             )
