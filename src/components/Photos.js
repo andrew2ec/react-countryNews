@@ -10,33 +10,9 @@ var Photos = React.createClass({
          'div',
          null,
          React.createElement(
-            'h1',
+            'h2',
             null,
-            'Photos'
-         ),
-         React.createElement(
-            'ul',
-            null,
-            React.createElement(
-               'li',
-               null,
-               this.props.pic
-            ),
-            React.createElement(
-               'li',
-               null,
-               this.props.pic1
-            ),
-            React.createElement(
-               'li',
-               null,
-               this.props.pic2
-            ),
-            React.createElement(
-               'li',
-               null,
-               this.props.pic3
-            )
+            'These are Photos'
          )
       );
    }

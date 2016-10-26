@@ -6,15 +6,6 @@ var Header = React.createClass({
    displayName: 'Header',
 
    render: function render() {
-
-      linkStyle = {
-         display: 'inline',
-         textAlign: 'right'
-      };
-      listStyle = {
-         listStyleType: 'none',
-         display: 'inline'
-      };
       return React.createElement(
          'div',
          null,
@@ -31,40 +22,28 @@ var Header = React.createClass({
             'div',
             null,
             React.createElement(
-               'h2',
+               'p',
                null,
                'Top stories in my country'
             )
          ),
          React.createElement(
             'div',
-            { style: linkStyle },
+            null,
             React.createElement(
                'ul',
-               { style: listStyle },
+               null,
                React.createElement(
                   'li',
                   null,
-                  React.createElement(
-                     'h2',
-                     null,
-                     'NEWS'
-                  )
+                  'NEWS'
                ),
                React.createElement(
                   'li',
                   null,
-                  React.createElement(
-                     'h2',
-                     null,
-                     'PHOTOS'
-                  )
+                  'PHOTOS'
                )
-            )
-         ),
-         React.createElement(
-            'div',
-            null,
+            ),
             this.props.children
          )
       );
