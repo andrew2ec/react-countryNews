@@ -24,7 +24,7 @@ var Header = React.createClass({
             React.createElement(
                'h1',
                null,
-               this.props.title
+               'Country News'
             )
          ),
          React.createElement(
@@ -33,7 +33,7 @@ var Header = React.createClass({
             React.createElement(
                'h2',
                null,
-               this.props.subtitle
+               'Top stories in my country'
             )
          ),
          React.createElement(
@@ -48,7 +48,7 @@ var Header = React.createClass({
                   React.createElement(
                      'h2',
                      null,
-                     this.props.link1
+                     'NEWS'
                   )
                ),
                React.createElement(
@@ -57,7 +57,7 @@ var Header = React.createClass({
                   React.createElement(
                      'h2',
                      null,
-                     this.props.link2
+                     'PHOTOS'
                   )
                )
             )

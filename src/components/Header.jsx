@@ -14,15 +14,15 @@ var Header = React.createClass({
 		return(
 			<div>
 				<div>
-					<h1>{this.props.title}</h1>
+					<h1>Country News</h1>
 				</div>
 				<div>
-					<h2>{this.props.subtitle}</h2>
+					<h2>Top stories in my country</h2>
 				</div>
 				<div style={linkStyle}>
 					<ul style={listStyle}>
-						<li><h2>{this.props.link1}</h2></li>
-						<li><h2>{this.props.link2}</h2></li>
+						<li><h2>NEWS</h2></li>
+						<li><h2>PHOTOS</h2></li>
 					</ul>
 				</div>
 				<div>
