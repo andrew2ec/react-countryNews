@@ -4,7 +4,7 @@ var Photos = React.createClass({
 	render: function(){
 		return(
 			<div>
-				<h2>These are Photos</h2>
+				<h2>These are the photos</h2>
 			</div>
 		);
 	}

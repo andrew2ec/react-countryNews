@@ -8,15 +8,13 @@ var Header = React.createClass({
 					<h1>Country News</h1>
 				</div>
 				<div>
-					<p>Top stories in my country</p>
+					<h2>Top stories in my country</h2>
 				</div>
 				<div>
-					<ul>
-						<li>NEWS</li>
-						<li>PHOTOS</li>
-					</ul>
-						{this.props.children}
+					<h2>NEWS</h2>
+					<h2>PHOTOS</h2>
 				</div>
+				{this.props.children}
 			</div>
 		);
 	}
